@@ -5,14 +5,14 @@ import gifts from "../../assets/json/gifts.json";
 
 const GiftBoxes = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [currentProduct, setCurrentProduct] = useState(gifts[0]);
+  const [currentGift, setCurrentGift] = useState(gifts[0]);
 
   const toggleGiftModal = () => {
     setModalOpen(!modalOpen);
   };
 
   const openGiftModal = (index) => {
-    setCurrentProduct(gifts.find((gift) => gift.index === index));
+    setCurrentGift(gifts.find((gift) => gift.index === index));
     toggleGiftModal();
   };
 
@@ -34,8 +34,9 @@ const GiftBoxes = () => {
         className="giftModal"
       >
         <div className="modal_content">
-          <h1>{currentProduct.title}</h1>
-          <p dangerouslySetInnerHTML={{ __html: currentProduct.description }} />
+          <h1>{currentGift.title}</h1>
+          <img src={currentGift.img} alt={currentGift.index} />
+          <p dangerouslySetInnerHTML={{ __html: currentGift.description }} />
           <button onClick={toggleGiftModal}>Fermer</button>
         </div>
       </Modal>
