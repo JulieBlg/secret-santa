@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.scss";
 
-function App() {
+import Snowfall from "./components/Snowfall";
+import WelcomeModal from "./components/WelcomeModal";
+import GiftBoxes from "./components/GiftBoxes";
+
+const App = () => {
+  const [welcomeModal, setWelcomeModal] = useState(true);
+
+  const hideWelcome = () => setWelcomeModal(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Snowfall />
+      <div className="content">
+        {welcomeModal && <WelcomeModal hideWelcome={hideWelcome} />}
+        {!welcomeModal && <GiftBoxes />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+$smooth-brown: #ceb89f;
+$dark-brown: #61503c;
+$dark-blue: rgb(4, 36, 76);
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.snowfall {
+  content: "";
+  background: url("./assets/img/background1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.snowfall::before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.snowflake {
+  position: absolute;
+  color: white;
+  z-index: 1000;
+
+  &:after {
+    content: "\2744";
+  }
+}
+
+$snowflakes: 250;
+
+@for $i from 1 through $snowflakes {
+  $top: (random(50) + 50) * 1%;
+  $left: random(100) * 1%;
+  $delay: random(20) - 1s;
+  $duration: random(6) + 4s;
+  $size: random(24);
+
+  .snowflake:nth-of-type(#{$i}) {
+    animation-name: snowflake-#{$i};
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-iteration-count: infinite;
+    left: $left;
+    top: -$top;
+    &:after {
+      font-size: $size * 1px;
+    }
+  }
+
+  @keyframes snowflake-#{$i} {
+    0% {
+      transform: rotate(0deg);
+      left: $left;
+      top: -$top;
+    }
+    25% {
+      left: $left + 1%;
+    }
+
+    50% {
+      left: $left;
+    }
+
+    75% {
+      left: $left + 2%;
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(360deg);
+      top: $top + 40%;
+      opacity: 0;
+    }
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1000;
+  height: 100%;
+}
+
+p {
+  font-family: "Raleway";
+  margin: 0;
+}
+
+.welcome-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .welcome-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    box-shadow: 0px 3px 8px #00000012;
+
+    @media (max-width: 1023px) {
+      width: 80%;
+    }
+
+    p {
+      color: $dark-brown;
+    }
+
+    .merry-christmas {
+      color: $smooth-brown;
+      font-family: "Pacifico";
+      font-size: 50px;
+
+      @media (max-width: 1023px) {
+        font-size: 30px;
+      }
+    }
+
+    button {
+      margin-top: 30px;
+    }
+  }
+}
+
+.text {
+  margin: 30px;
+  text-align: center;
+}
+
+button {
+  background-color: $smooth-brown;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  width: 50%;
+  font-family: "Pacifico";
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid $smooth-brown;
+    color: $smooth-brown;
+    background-color: white;
+  }
+}
+
+.giftboxes {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 20%;
+  justify-content: center;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .giftbox {
+    border: 5px solid white;
+    margin: 50px;
+    padding: 50px;
+    background-color: $smooth-brown;
+    color: white;
+    font-family: "Pacifico";
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  .giftbox:hover {
+    background: smooth-brown;
+    animation: openDoor 2s ease 0s;
+  }
+  @keyframes openDoor {
+    from {
+      -webkit-transform: perspective(300) rotateY(0deg);
+      -webkit-transform-origin: 0% 0%;
+    }
+    to {
+      -webkit-transform: perspective(300) rotateY(90deg);
+      -webkit-transform-origin: 0% 0%;
+    }
+  }
+}
