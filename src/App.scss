@@ -159,51 +159,29 @@ button {
   font-family: "Pacifico";
   outline: none;
   cursor: pointer;
+  border: 2px solid $smooth-brown;
 
   &:hover {
-    border: 2px solid $smooth-brown;
     color: $smooth-brown;
     background-color: white;
   }
 }
 
 .giftboxes {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   height: 100%;
-  padding: 0 20%;
-  justify-content: center;
-
-  .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 
   .giftbox {
     border: 5px solid white;
     margin: 50px;
     padding: 50px;
-    background-color: $smooth-brown;
     color: white;
     font-family: "Pacifico";
     font-size: 50px;
     cursor: pointer;
-  }
-
-  .giftbox:hover {
-    background: smooth-brown;
-    animation: openDoor 2s ease 0s;
-  }
-  @keyframes openDoor {
-    from {
-      -webkit-transform: perspective(300) rotateY(0deg);
-      -webkit-transform-origin: 0% 0%;
-    }
-    to {
-      -webkit-transform: perspective(300) rotateY(90deg);
-      -webkit-transform-origin: 0% 0%;
-    }
   }
 }

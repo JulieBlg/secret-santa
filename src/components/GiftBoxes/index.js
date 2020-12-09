@@ -1,19 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-modal";
+
+import gifts from "../../assets/json/gifts.json";
 
 const GiftBoxes = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState(gifts[0]);
+
+  const toggleGiftModal = () => {
+    setModalOpen(!modalOpen);
+  };
+
+  const openGiftModal = (index) => {
+    setCurrentProduct(gifts.find((gift) => gift.index === index));
+    toggleGiftModal();
+  };
+
   return (
-    <div className="giftboxes">
-      <div className="row first">
-        <div className="giftbox">1</div>
-        <div className="giftbox">2</div>
-        <div className="giftbox">3</div>
+    <>
+      <div className="giftboxes">
+        {gifts.map((gift) => (
+          <div
+            className="giftbox"
+            onClick={() => openGiftModal(gift.index)}
+            key={gift.index}
+          >
+            <img
+              src="../../assets/img/snowflake.svg"
+              alt="snowflake"
+              width="500"
+              height="600"
+            />
+          </div>
+        ))}
       </div>
-      <div className="row second">
-        <div className="giftbox">4</div>
-        <div className="giftbox">5</div>
-        <div className="giftbox">6</div>
-      </div>
-    </div>
+      <Modal
+        isOpen={modalOpen}
+        onRequestClose={toggleGiftModal}
+        ariaHideApp={false}
+      >
+        <div className="modal_content">
+          <button onClick={toggleGiftModal}>Fermer</button>
+          <h1>{currentProduct.title}</h1>
+          <p dangerouslySetInnerHTML={{ __html: currentProduct.description }} />
+        </div>
+      </Modal>
+    </>
   );
 };
 
