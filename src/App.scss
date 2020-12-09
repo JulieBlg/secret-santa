@@ -213,6 +213,7 @@ button {
     padding: 24px;
     outline: none;
     overflow: auto;
+    max-height: 100%;
 
     @media screen and (min-width: 1024px) {
       width: 60%;
