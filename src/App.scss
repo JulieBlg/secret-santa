@@ -112,7 +112,6 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 30px;
     padding: 10px;
     background-color: white;
     width: 50%;
@@ -152,7 +151,6 @@ button {
   background-color: $smooth-brown;
   color: white;
   font-size: 15px;
-  border-radius: 5px;
   border: none;
   padding: 10px;
   width: 50%;
@@ -172,16 +170,72 @@ button {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   .giftbox {
     border: 5px solid white;
-    margin: 50px;
-    padding: 50px;
-    color: white;
+    margin: 40px;
+    color: $dark-brown;
     font-family: "Pacifico";
-    font-size: 50px;
+    font-size: 40px;
     cursor: pointer;
+    background-color: white;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.ReactModalPortal {
+  z-index: 2000;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 1024px) {
+    width: 70%;
+  }
+
+  .ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .giftModal {
+    border: none;
+    background-color: white;
+    padding: 24px;
+    outline: none;
+    overflow: auto;
+
+    @media screen and (min-width: 1024px) {
+      width: 60%;
+    }
+  }
+}
+
+.modal_content {
+  color: $dark-brown;
+
+  h1 {
+    font-family: "Pacifico";
+    color: $smooth-brown;
+    text-align: center;
+    margin: 0 0 24px 0;
+  }
+
+  button {
+    margin: 24px 25% 0 25%;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
   }
 }

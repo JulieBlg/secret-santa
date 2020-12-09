@@ -17,35 +17,29 @@ const GiftBoxes = () => {
   };
 
   return (
-    <>
-      <div className="giftboxes">
-        {gifts.map((gift) => (
-          <div
-            className="giftbox"
-            onClick={() => openGiftModal(gift.index)}
-            key={gift.index}
-          >
-            <img
-              src="../../assets/img/snowflake.svg"
-              alt="snowflake"
-              width="500"
-              height="600"
-            />
-          </div>
-        ))}
-      </div>
+    <div className="giftboxes">
+      {gifts.map((gift) => (
+        <div
+          className="giftbox"
+          onClick={() => openGiftModal(gift.index)}
+          key={gift.index}
+        >
+          {gift.index}
+        </div>
+      ))}
       <Modal
         isOpen={modalOpen}
         onRequestClose={toggleGiftModal}
         ariaHideApp={false}
+        className="giftModal"
       >
         <div className="modal_content">
-          <button onClick={toggleGiftModal}>Fermer</button>
           <h1>{currentProduct.title}</h1>
           <p dangerouslySetInnerHTML={{ __html: currentProduct.description }} />
+          <button onClick={toggleGiftModal}>Fermer</button>
         </div>
       </Modal>
-    </>
+    </div>
   );
 };
 
