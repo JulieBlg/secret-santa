@@ -24,16 +24,16 @@
     "description": "Que serait une boule à thé sans un petit thé en vrac, me dirais-tu ? Et tu aurais raison ! Je t'ai choisi un thé à la mangue que j'aime beaucoup parce qu'il a beaucoup de goût et je trouve qu'il se suffit à lui-même. En plus, c'est pas forcément classique comme goût, le thé à la mangue, et du coup j'avais envie que tu le goûtes !"
   },
   {
-    "title": "Le chocolat à chocolat chaud",
-    "index": 6,
-    "img": "https://cdn.pixabay.com/photo/2017/08/22/14/27/cup-2669153_1280.jpg",
-    "description": "En cette période hivernale, je trouve qu'il n'y a pas plus réconfortant qu'une boisson chaude et un plaid. Du coup, voici une boite de chocolat à faire fondre, spécial chocolat chaud des familles. Il y a plusieurs goûts, ça te laisse le choix de faire ce que tu veux, et mon petit doigt me dit que si tu as la flemme de le faire fondre, il y a fort à parier que le chocolat soit bon !!!"
-  },
-  {
     "title": "Les marshmallows",
     "index": 5,
     "img": "https://cdn.pixabay.com/photo/2017/03/27/15/10/autumn-2179301_1280.jpg",
     "description": "Ca c'est le petit bonus du chocolat chaud level on se fait plaisir un maximum, parce que oui, c'est aussi ça Noël 🤶"
+  },
+  {
+    "title": "Le chocolat à chocolat chaud",
+    "index": 6,
+    "img": "https://cdn.pixabay.com/photo/2017/08/22/14/27/cup-2669153_1280.jpg",
+    "description": "En cette période hivernale, je trouve qu'il n'y a pas plus réconfortant qu'une boisson chaude et un plaid. Du coup, voici une boite de chocolat à faire fondre, spécial chocolat chaud des familles. Il y a plusieurs goûts, ça te laisse le choix de faire ce que tu veux, et mon petit doigt me dit que si tu as la flemme de le faire fondre, il y a fort à parier que le chocolat soit bon !!!"
   },
   {
     "title": "Le thé de Jordanie",
