@@ -37,7 +37,7 @@ const GiftBoxes = () => {
           <h1>{currentGift.title}</h1>
           <img src={currentGift.img} alt={currentGift.index} />
           <p dangerouslySetInnerHTML={{ __html: currentGift.description }} />
-          <button onClick={toggleGiftModal}>Fermer</button>
+          <button onClick={toggleGiftModal}>{currentGift.emoji}</button>
         </div>
       </Modal>
     </div>

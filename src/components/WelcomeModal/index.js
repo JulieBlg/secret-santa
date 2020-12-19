@@ -11,7 +11,7 @@ const WelcomeModal = ({ hideWelcome }) => {
           peu particulière ...
         </p>
         <p>Prête à découvrir les secrets de Santa ?</p>
-        <button onClick={hideWelcome}>C'est parti !</button>
+        <button onClick={hideWelcome}>🎁</button>
       </div>
     </div>
   );
