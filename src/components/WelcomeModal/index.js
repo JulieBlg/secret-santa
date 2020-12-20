@@ -6,9 +6,9 @@ const WelcomeModal = ({ hideWelcome }) => {
       <div className="welcome-text">
         <p className="merry-christmas">Joyeux Noël Ocy !</p>
         <p className="text">
-          Pour t'éviter un déchiffrage compliqué de son écriture en
-          hiéroglyphes, ton Père Noël préféré t'as préparé une carte de Noël un
-          peu particulière ...
+          Le père Noël est un petit filou, et il aime bien faire des cadeaux improbables... <br/>
+          Du coup, il a décidé de te donner quelques explications sur cette boite mystère. <br/>
+          Pourquoi faire ça ici, me diras-tu ? Il n'est pas impossible que l'écriture de ce bon vieux père Noël ne soit pas la plus lisible de toutes ... <br/>
         </p>
         <p>Prête à découvrir les secrets de Santa ?</p>
         <button onClick={hideWelcome}>🎁</button>

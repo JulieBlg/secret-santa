@@ -113,21 +113,17 @@ p {
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    background-color: white;
-    width: 50%;
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 100%;
     height: 50%;
     box-shadow: 0px 3px 8px #00000012;
 
-    @media (max-width: 1023px) {
-      width: 80%;
-    }
-
     p {
-      color: $dark-brown;
+      color: #30455d;
     }
 
     .merry-christmas {
-      color: $smooth-brown;
+      color: #737f8d;
       font-family: "Pacifico";
       font-size: 50px;
 
@@ -171,20 +167,19 @@ button {
 
   .giftbox {
     border: 5px solid white;
+    color: white;
+    background-color: #a2b5cb;
     margin: 40px;
-    color: $dark-brown;
     font-family: "Pacifico";
     font-size: 40px;
     cursor: pointer;
-    background-color: white;
-    background-repeat: no-repeat;
     text-align: center;
     height: 80px;
     width: 80px;
 
     &:hover {
-      background: none;
-      border: 5px solid $dark-brown;
+      background-color: white;
+      color: #a2b5cb;
     }
   }
 }
@@ -223,11 +218,11 @@ button {
 }
 
 .modal_content {
-  color: $dark-brown;
+  color: #30455d;
 
   h1 {
     font-family: "Pacifico";
-    color: $smooth-brown;
+    color: #737f8d;
     text-align: center;
     margin: 0 0 24px 0;
   }
@@ -245,5 +240,11 @@ button {
   img {
     max-width: 40%;
     margin: 0 30% 24px 30%;
+  }
+
+  p {
+    @media screen and (min-width: 1024px) {
+      margin: 0 10%;
+    }
   }
 }
